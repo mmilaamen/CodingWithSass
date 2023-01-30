@@ -1,18 +1,28 @@
+body {
+  width: 100vw;
+}
 nav {
+  margin: 0 90px;
   a {
     color: $primary-color;
   }
 }
 
 header {
+  width: 350px;
   height: $huge;
-  background-image: url('../../images/header.jpg');
+  background-image: url("../../images/header.jpg");
   background-size: cover;
   text-align: center;
+  margin: 0 40px;
+  padding: 50px;
 }
 
 .card {
   border-radius: 5px;
+  background-color: #e0ddb2;
+  margin: 20px 70px;
+  padding: 10px;
 
   .img {
     background-size: cover;
@@ -20,16 +30,101 @@ header {
     width: 100%;
     background-position: center;
   }
+  h5 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  p {
+    font-weight: bold;
+  }
 }
 
 main {
   aside {
+    width: 300px;
+    border: 2px #e0ddb2 solid;
+    padding: 10px;
+    margin: 20px 70px;
+    font-weight: bold;
+  }
+  h3 {
+    font-weight: bolder;
+    font-size: 1.5rem;
+  }
+  article {
+    font-weight: bold;
+    width: 300px;
+    padding: 10px;
+    margin: 20px 70px;
+    text-align: left;
+  }
+  h2 {
+    font-weight: bolder;
+    font-size: 1.5rem;
   }
 }
 
 footer {
   background-color: $primary-color;
+  height: 100px;
+  padding: 20px;
+  ul {
+    list-style-type: none;
+  }
+  li {
+    margin: 0 10px;
+  }
   a {
     color: white;
+    font-size: $small;
+  }
+}
+@media screen and (min-width: $tablet) {
+  header {
+    width: 100%;
+    height: $huge;
+    background-image: url("../../images/header.jpg");
+    background-size: cover;
+    text-align: center;
+    margin: 0 40px;
+    padding: 50px;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card {
+    width: 500px;
+  }
+
+  nav {
+    ul {
+      justify-content: flex-end;
+    }
+  }
+
+  main {
+    display: flex;
+    flex-flow: row;
+    aside {
+      width: 25%;
+    }
+    article {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+  .card {
+    flex-basis: 1;
+    .img {
+      width: 44%;
+    }
   }
 }
